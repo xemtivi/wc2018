@@ -1,28 +1,16 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>ImInfo.in - Tutorial to get geo location by IP in jquery/javascript</title>
+  <title></title>
 </head>
 <body>
-    <div class="result">
-    </div>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!--Using freegeoip.net API-->
-    <script type="text/javascript">
-        $.getJSON('http://freegeoip.net/json/', function (location) {
-            $(".result").append('<br>Using freegeoip.net : Your country code is ' + location.country_code + '<br>');
-        });   
-    </script>
-    <!--Using hostip.info API-->
-    <script type="text/javascript">
-        $.get("http://api.hostip.info/country.php", function (data) {
-            $(".result").append('<br>Using hostip.info : Your country code is ' + data + '<br>');
-        });
-    </script>
-    <!--Using codehelper.io API-->
-    <script type="text/javascript" src="http://www.codehelper.io/api/ips/?js"></script>
-    <script type="text/javascript">
-        $(".result").append('<br>Using CodeHelper : Your country code is ' + codehelper_ip.Country + '<br>');  
-    </script>
+ 
+<script type="application/javascript">
+  function getIP(json) {
+    document.write("My public IP address is: ", json.ip);
+  }
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 </body>
 </html>
+
