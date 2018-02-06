@@ -1,14 +1,28 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+    <title>ImInfo.in - Tutorial to get geo location by IP in jquery/javascript</title>
 </head>
 <body>
- 
-<script type="text/javascript">
+    <div class="result">
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!--Using freegeoip.net API-->
+    <script type="text/javascript">
         $.getJSON('http://freegeoip.net/json/', function (location) {
-         alert('Your country code is ' + location.country_code);
+            $(".result").append('<br>Using freegeoip.net : Your country code is ' + location.country_code + '<br>');
         });   
-</script>
+    </script>
+    <!--Using hostip.info API-->
+    <script type="text/javascript">
+        $.get("http://api.hostip.info/country.php", function (data) {
+            $(".result").append('<br>Using hostip.info : Your country code is ' + data + '<br>');
+        });
+    </script>
+    <!--Using codehelper.io API-->
+    <script type="text/javascript" src="http://www.codehelper.io/api/ips/?js"></script>
+    <script type="text/javascript">
+        $(".result").append('<br>Using CodeHelper : Your country code is ' + codehelper_ip.Country + '<br>');  
+    </script>
 </body>
 </html>
-
